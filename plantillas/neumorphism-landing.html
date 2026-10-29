@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Nube · Neumorfismo</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{--bg:#e0e5ec;--dk:#a3b1c6;--lt:#ffffff;--ink:#3d4a5c;--acc:#0f9d8a}
+  body{font-family:'Quicksand',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;font-weight:500}
+  .raised{background:var(--bg);box-shadow:9px 9px 18px var(--dk),-9px -9px 18px var(--lt);border-radius:1.75rem}
+  .raised-sm{background:var(--bg);box-shadow:5px 5px 10px var(--dk),-5px -5px 10px var(--lt);border-radius:1rem}
+  .inset{background:var(--bg);box-shadow:inset 6px 6px 12px var(--dk),inset -6px -6px 12px var(--lt);border-radius:1.25rem}
+  .nbtn{background:var(--bg);box-shadow:6px 6px 12px var(--dk),-6px -6px 12px var(--lt);border-radius:999px;padding:.8rem 1.8rem;font-weight:700;color:var(--acc);display:inline-block;transition:.2s}
+  .nbtn:hover{color:#0b6e61}
+  .nbtn:active{box-shadow:inset 4px 4px 8px var(--dk),inset -4px -4px 8px var(--lt)}
+  .round{width:46px;height:46px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--bg);box-shadow:5px 5px 10px var(--dk),-5px -5px 10px var(--lt);color:var(--ink);transition:.2s}
+  .round:hover{color:var(--acc)}.round:active{box-shadow:inset 3px 3px 6px var(--dk),inset -3px -3px 6px var(--lt)}
+  input{background:transparent;border:0;outline:0;width:100%;padding:.85rem 1.25rem;color:var(--ink)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset:4px}
+  .icon{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--acc)}
+</style>
+</head>
+<body>
+<header class="px-4 pt-5">
+  <nav class="raised max-w-6xl mx-auto px-6 py-3 flex items-center justify-between" style="border-radius:999px">
+    <a href="#top" class="font-bold text-lg flex items-center gap-2"><i class="bi bi-cloud" style="color:var(--acc)"></i>Casa Nube</a>
+    <ul class="hidden md:flex gap-8 list-none m-0 p-0 font-semibold">
+      <li><a href="#servicios">Servicios</a></li><li><a href="#horarios">Horarios</a></li><li><a href="#lecturas">Lecturas</a></li><li><a href="#unete">Únete</a></li>
+    </ul>
+    <button id="menuBtn" class="round md:hidden" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu"><i class="bi bi-list text-xl"></i></button>
+    <a href="#unete" class="nbtn hidden md:inline-block !py-2">Sacar carnet</a>
+  </nav>
+  <div id="mobileMenu" class="hidden md:hidden raised max-w-6xl mx-auto mt-4 p-5">
+    <ul class="list-none p-0 m-0 flex flex-col gap-3 text-center font-semibold">
+      <li><a href="#servicios" class="block py-2">Servicios</a></li><li><a href="#horarios" class="block py-2">Horarios</a></li><li><a href="#lecturas" class="block py-2">Lecturas</a></li><li><a href="#unete" class="nbtn">Sacar carnet</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <section class="px-4 py-16 md:py-24">
+    <div class="max-w-6xl mx-auto row g-5 items-center">
+      <div class="col-lg-6">
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Leer con calma, a tu propio ritmo.</h1>
+        <p class="text-lg mb-6 max-w-lg">Una biblioteca de barrio con sillones blandos, silencio amable y más de 40.000 libros esperándote en las estanterías.</p>
+        <div class="inset flex items-center max-w-md mb-6"><i class="bi bi-search pl-4"></i><input placeholder="Busca un título o autor" aria-label="Buscar en el catálogo"></div>
+        <a href="#servicios" class="nbtn">Descubrir servicios</a>
+      </div>
+      <div class="col-lg-6">
+        <div class="raised p-4 mx-auto" style="max-width:480px;border-radius:3rem">
+          <div class="inset p-3" style="border-radius:2.4rem">
+            <div class="w-full overflow-hidden" style="aspect-ratio:1/1;border-radius:2rem;background:linear-gradient(135deg,#c9d3e0,#e8edf4)">
+              <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=70" alt="Libros apilados junto a una ventana" class="w-full h-full object-cover" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="px-4 py-16">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center">Servicios para cada lector</h2>
+      <div class="row g-5">
+        <div class="col-md-4"><div class="raised p-6 text-center h-100"><div class="icon inset mx-auto mb-4" style="border-radius:50%"><i class="bi bi-book"></i></div><h3 class="text-xl font-bold">Préstamo a domicilio</h3><p class="text-sm mb-0">Hasta seis libros por socio, renovables desde la web.</p></div></div>
+        <div class="col-md-4"><div class="raised p-6 text-center h-100"><div class="icon inset mx-auto mb-4" style="border-radius:50%"><i class="bi bi-emoji-smile"></i></div><h3 class="text-xl font-bold">Rincón infantil</h3><p class="text-sm mb-0">Cojines, cuentos ilustrados y lecturas en voz alta los sábados.</p></div></div>
+        <div class="col-md-4"><div class="raised p-6 text-center h-100"><div class="icon inset mx-auto mb-4" style="border-radius:50%"><i class="bi bi-wifi"></i></div><h3 class="text-xl font-bold">Zona de estudio</h3><p class="text-sm mb-0">Mesas amplias, wifi gratuito y enchufes en cada puesto.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="horarios" class="px-4 py-16">
+    <div class="max-w-4xl mx-auto inset p-8 md:p-12 row g-4 items-center" style="border-radius:2.5rem">
+      <div class="col-md-6"><h2 class="text-3xl font-bold mb-2">Horarios</h2><p class="mb-0">Puedes pasar sin cita. Para salas de grupo, reserva con un día de antelación.</p></div>
+      <div class="col-md-6"><ul class="list-none p-0 m-0 space-y-3">
+        <li class="raised-sm px-4 py-3 flex justify-between"><span>Lunes a viernes</span><b>8:00 – 20:00</b></li>
+        <li class="raised-sm px-4 py-3 flex justify-between"><span>Sábados</span><b>10:00 – 14:00</b></li>
+        <li class="raised-sm px-4 py-3 flex justify-between"><span>Domingos</span><b>Cerrado</b></li></ul></div>
+    </div>
+  </section>
+
+  <section id="lecturas" class="px-4 py-16">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center">Lecturas del mes</h2>
+      <div class="row g-4">
+        <div class="col-6 col-lg-3"><div class="raised p-4 h-100"><div class="inset flex items-center justify-center text-center p-3 font-bold" style="height:170px">La casa del lago</div><p class="mt-3 mb-0 text-sm">Novela · S. Beltrán</p></div></div>
+        <div class="col-6 col-lg-3"><div class="raised p-4 h-100"><div class="inset flex items-center justify-center text-center p-3 font-bold" style="height:170px">Manual del jardinero</div><p class="mt-3 mb-0 text-sm">Naturaleza · O. Lara</p></div></div>
+        <div class="col-6 col-lg-3"><div class="raised p-4 h-100"><div class="inset flex items-center justify-center text-center p-3 font-bold" style="height:170px">Historias de barrio</div><p class="mt-3 mb-0 text-sm">Crónica · N. Gil</p></div></div>
+        <div class="col-6 col-lg-3"><div class="raised p-4 h-100"><div class="inset flex items-center justify-center text-center p-3 font-bold" style="height:170px">Pan y paciencia</div><p class="mt-3 mb-0 text-sm">Cocina · F. Roca</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="unete" class="px-4 py-16">
+    <div class="max-w-2xl mx-auto raised p-8 text-center" style="border-radius:2.5rem">
+      <h2 class="text-3xl font-bold mb-2">Hazte socio gratis</h2>
+      <p class="mb-5">Déjanos tu correo y te enviamos el formulario de carnet.</p>
+      <div class="flex flex-col sm:flex-row gap-4 items-stretch"><div class="inset flex-1"><input type="email" placeholder="tu@correo.com" aria-label="Correo electrónico"></div><button class="nbtn">Enviar</button></div>
+    </div>
+  </section>
+</main>
+
+<footer class="px-4 pb-10 pt-6">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
+    <p class="m-0 text-sm">© 2026 Casa Nube · Plaza del Sosiego 3</p>
+    <div class="flex gap-4"><a class="round" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a class="round" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a class="round" href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a class="round" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a></div>
+  </div>
+</footer>
+<script>
+const b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
+function toggle(o){m.classList.toggle('hidden',!o);b.setAttribute('aria-expanded',String(o));b.querySelector('i').className=o?'bi bi-x-lg text-xl':'bi bi-list text-xl'}
+b.addEventListener('click',()=>toggle(m.classList.contains('hidden')));
+m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggle(false)));
+</script>
+</body>
+</html>

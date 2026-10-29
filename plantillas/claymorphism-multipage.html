@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bibliolab · Claymorfismo</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  [hidden]{display:none!important}
+  :root{--bg:#ece6ff;--lilac:#c9b6ff;--pink:#ff9ec7;--teal:#7fe0d1;--sun:#ffd36e;--ink:#2a1f54}
+  body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  h1,h2,h3,.disp{font-family:'Baloo 2',sans-serif;line-height:1.1}
+  .clay{border-radius:1.75rem;box-shadow:inset -7px -7px 14px rgba(42,31,84,.14),inset 7px 7px 14px rgba(255,255,255,.7),9px 11px 22px rgba(42,31,84,.2)}
+  .clay-sm{border-radius:1.1rem;box-shadow:inset -4px -4px 8px rgba(42,31,84,.14),inset 4px 4px 8px rgba(255,255,255,.7),5px 7px 14px rgba(42,31,84,.2)}
+  .cbtn{display:inline-block;padding:.8rem 1.7rem;border-radius:1.1rem;font-weight:800;font-family:'Baloo 2';background:var(--pink);box-shadow:inset -5px -5px 10px rgba(42,31,84,.16),inset 5px 5px 10px rgba(255,255,255,.55),5px 7px 14px rgba(42,31,84,.25);transition:transform .15s}
+  .cbtn:hover{transform:translateY(-3px)}.cbtn:active{transform:translateY(1px)}
+  .dock a{padding:.5rem 1.1rem;border-radius:1rem;font-family:'Baloo 2';font-weight:700}
+  .dock a.active{background:var(--sun);box-shadow:inset -3px -3px 6px rgba(42,31,84,.15),inset 3px 3px 6px rgba(255,255,255,.7)}
+  .soc{width:46px;height:46px;border-radius:1rem;display:inline-flex;align-items:center;justify-content:center;font-size:1.2rem}
+  input,textarea,select{width:100%;border:0;padding:.8rem 1.1rem;background:#f8f5ff;border-radius:1rem;box-shadow:inset 4px 4px 8px rgba(42,31,84,.15),inset -4px -4px 8px #fff;color:var(--ink)}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+</style>
+</head>
+<body>
+<header class="px-4 pt-4 sticky top-0 z-50">
+  <nav class="clay max-w-6xl mx-auto px-4 py-3 flex items-center justify-between" style="background:var(--lilac)">
+    <a href="#inicio" class="disp text-2xl font-extrabold flex items-center gap-2"><i class="bi bi-lightbulb-fill" style="color:var(--sun)"></i>Bibliolab</a>
+    <div class="dock hidden md:flex gap-1"><a data-link href="#inicio">Inicio</a><a data-link href="#catalogo">Catálogo</a><a data-link href="#talleres">Talleres</a><a data-link href="#contacto">Contacto</a></div>
+    <button id="menuBtn" class="clay-sm md:hidden w-11 h-11 flex items-center justify-center" style="background:var(--sun)" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu"><i class="bi bi-list text-2xl"></i></button>
+  </nav>
+  <div id="mobileMenu" class="dock hidden md:hidden clay max-w-6xl mx-auto mt-3 p-4 flex flex-col gap-2" style="background:var(--teal)">
+    <a data-link href="#inicio">Inicio</a><a data-link href="#catalogo">Catálogo</a><a data-link href="#talleres">Talleres</a><a data-link href="#contacto">Contacto</a>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 py-10">
+  <!-- INICIO -->
+  <div data-page="inicio">
+    <section class="clay overflow-hidden mb-10 relative" style="background:linear-gradient(rgba(42,31,84,.55),rgba(42,31,84,.35)),url('https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1600&q=70') center/cover,var(--lilac);min-height:430px;display:flex;align-items:center">
+      <div class="p-8 md:p-14 text-white max-w-2xl">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-3">Aprende, crea y comparte.</h1>
+        <p class="text-lg mb-6">Una biblioteca con laboratorio: libros, impresora 3D, robótica y talleres para curiosos de todas las edades.</p>
+        <div class="flex gap-3 flex-wrap"><a href="#talleres" class="cbtn" style="color:var(--ink)">Ver talleres</a><a href="#catalogo" class="cbtn" style="background:var(--teal);color:var(--ink)">Explorar libros</a></div>
+      </div>
+    </section>
+    <div class="row g-4">
+      <div class="col-md-4"><div class="clay p-6 h-100" style="background:var(--sun)"><i class="bi bi-printer text-3xl"></i><h2 class="text-2xl mt-2">Taller maker</h2><p class="mb-0">Impresora 3D, corte láser y herramientas, con monitores que te guían.</p></div></div>
+      <div class="col-md-4"><div class="clay p-6 h-100" style="background:var(--pink)"><i class="bi bi-robot text-3xl"></i><h2 class="text-2xl mt-2">Robótica</h2><p class="mb-0">Kits para montar, programar y probar tu primer robot.</p></div></div>
+      <div class="col-md-4"><div class="clay p-6 h-100" style="background:var(--teal)"><i class="bi bi-book text-3xl"></i><h2 class="text-2xl mt-2">Lectura libre</h2><p class="mb-0">Sofás, pufs y una colección que crece con tus sugerencias.</p></div></div>
+    </div>
+  </div>
+
+  <!-- CATÁLOGO -->
+  <div data-page="catalogo" hidden>
+    <h1 class="text-5xl font-extrabold mb-6">Catálogo</h1>
+    <div class="clay p-4 mb-8 flex items-center gap-3" style="background:#f8f5ff"><i class="bi bi-search text-xl pl-2"></i><input id="q" placeholder="Filtra por título o tema" aria-label="Filtrar catálogo"></div>
+    <div class="row g-4" id="list">
+      <div class="col-sm-6 col-lg-4" data-t="robots programación"><div class="clay p-5 h-100" style="background:var(--teal)"><h2 class="text-2xl">Robots para principiantes</h2><p class="mb-0 text-sm">Tecnología · Guía ilustrada</p></div></div>
+      <div class="col-sm-6 col-lg-4" data-t="cuentos fantasía"><div class="clay p-5 h-100" style="background:var(--pink)"><h2 class="text-2xl">Cuentos del bosque eléctrico</h2><p class="mb-0 text-sm">Fantasía · Juvenil</p></div></div>
+      <div class="col-sm-6 col-lg-4" data-t="cocina ciencia"><div class="clay p-5 h-100" style="background:var(--sun)"><h2 class="text-2xl">Ciencia en la cocina</h2><p class="mb-0 text-sm">Divulgación · Experimentos</p></div></div>
+      <div class="col-sm-6 col-lg-4" data-t="dibujo arte"><div class="clay p-5 h-100" style="background:var(--lilac)"><h2 class="text-2xl">Dibujar sin miedo</h2><p class="mb-0 text-sm">Arte · Manual práctico</p></div></div>
+      <div class="col-sm-6 col-lg-4" data-t="programación juegos"><div class="clay p-5 h-100" style="background:var(--teal)"><h2 class="text-2xl">Tu primer videojuego</h2><p class="mb-0 text-sm">Programación · Proyectos</p></div></div>
+      <div class="col-sm-6 col-lg-4" data-t="espacio astronomía"><div class="clay p-5 h-100" style="background:var(--pink)"><h2 class="text-2xl">Planetas y cometas</h2><p class="mb-0 text-sm">Astronomía · Infantil</p></div></div>
+    </div>
+    <p id="none" class="text-lg mt-6" hidden>No hay resultados. Prueba con otra palabra, como «robots» o «arte».</p>
+  </div>
+
+  <!-- TALLERES -->
+  <div data-page="talleres" hidden>
+    <h1 class="text-5xl font-extrabold mb-6">Talleres</h1>
+    <div class="row g-4">
+      <div class="col-md-6"><div class="clay p-6" style="background:var(--sun)"><h2 class="text-3xl">Impresión 3D</h2><p>Diseña una pieza y la imprimimos juntos.</p><p class="mb-0 font-bold">Martes · 17:30 · 10 plazas</p></div></div>
+      <div class="col-md-6"><div class="clay p-6" style="background:var(--teal)"><h2 class="text-3xl">Robótica con bloques</h2><p>Programa un robot para que siga una línea.</p><p class="mb-0 font-bold">Jueves · 17:30 · 12 plazas</p></div></div>
+      <div class="col-md-6"><div class="clay p-6" style="background:var(--pink)"><h2 class="text-3xl">Cómic y narración</h2><p>De la idea a la viñeta en tres sesiones.</p><p class="mb-0 font-bold">Sábado · 11:00 · 15 plazas</p></div></div>
+      <div class="col-md-6"><div class="clay p-6" style="background:var(--lilac)"><h2 class="text-3xl">Radio de la biblioteca</h2><p>Graba tu propio pódcast con micrófonos profesionales.</p><p class="mb-0 font-bold">Viernes · 18:00 · 8 plazas</p></div></div>
+    </div>
+  </div>
+
+  <!-- CONTACTO -->
+  <div data-page="contacto" hidden>
+    <h1 class="text-5xl font-extrabold mb-6">Contacto</h1>
+    <div class="row g-4">
+      <div class="col-lg-7"><form class="clay p-6 space-y-4" style="background:var(--lilac)" onsubmit="event.preventDefault();this.querySelector('button').textContent='¡Enviado!'"><input placeholder="Tu nombre" aria-label="Nombre" required><input type="email" placeholder="Tu correo" aria-label="Correo" required><textarea rows="4" placeholder="Cuéntanos qué te gustaría hacer" aria-label="Mensaje"></textarea><button class="cbtn">Enviar mensaje</button></form></div>
+      <div class="col-lg-5"><div class="clay p-6 space-y-3" style="background:var(--teal)"><p class="m-0"><i class="bi bi-geo-alt-fill mr-2"></i>Paseo de las Ideas 21</p><p class="m-0"><i class="bi bi-telephone-fill mr-2"></i>+00 555 010 203</p><p class="m-0"><i class="bi bi-envelope-fill mr-2"></i>hola@bibliolab.org</p>
+        <div class="flex gap-3 pt-2"><a class="soc clay-sm" style="background:var(--sun)" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a class="soc clay-sm" style="background:var(--pink)" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a class="soc clay-sm" style="background:var(--lilac)" href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a class="soc clay-sm" style="background:#fff" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a></div></div></div>
+    </div>
+  </div>
+</main>
+<footer class="text-center pb-10 text-sm">© 2026 Bibliolab · Biblioteca y laboratorio</footer>
+
+<script>
+const b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
+function toggle(o){m.classList.toggle('hidden',!o);b.setAttribute('aria-expanded',String(o));b.querySelector('i').className=o?'bi bi-x-lg text-2xl':'bi bi-list text-2xl'}
+b.addEventListener('click',()=>toggle(m.classList.contains('hidden')));
+const pages=[...document.querySelectorAll('[data-page]')];
+function route(){const h=(location.hash||'#inicio').slice(1);const t=pages.some(p=>p.dataset.page===h)?h:'inicio';
+ pages.forEach(p=>p.hidden=p.dataset.page!==t);
+ document.querySelectorAll('[data-link]').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+t));
+ toggle(false);window.scrollTo(0,0)}
+addEventListener('hashchange',route);route();
+document.getElementById('q').addEventListener('input',e=>{const v=e.target.value.toLowerCase().trim();let n=0;
+ document.querySelectorAll('#list [data-t]').forEach(el=>{const ok=!v||(el.dataset.t+' '+el.textContent.toLowerCase()).includes(v);el.hidden=!ok;if(ok)n++});
+ document.getElementById('none').hidden=n>0});
+</script>
+</body>
+</html>

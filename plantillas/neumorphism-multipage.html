@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biblioteca Sereno · Neumorfismo</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  [hidden]{display:none!important}
+  :root{--bg:#d8e4dc;--dk:#b0c1b6;--lt:#f6fbf8;--ink:#23402f;--acc:#2f6b55}
+  body{font-family:'Work Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+  h1,h2,h3,.serif{font-family:'Lora',serif}
+  .raised{background:var(--bg);box-shadow:10px 10px 20px var(--dk),-10px -10px 20px var(--lt);border-radius:1.25rem}
+  .raised-sm{background:var(--bg);box-shadow:5px 5px 10px var(--dk),-5px -5px 10px var(--lt);border-radius:.8rem}
+  .inset{background:var(--bg);box-shadow:inset 5px 5px 10px var(--dk),inset -5px -5px 10px var(--lt);border-radius:.8rem}
+  .nbtn{background:var(--bg);box-shadow:6px 6px 12px var(--dk),-6px -6px 12px var(--lt);border-radius:.8rem;padding:.75rem 1.6rem;font-weight:600;color:var(--acc);display:inline-block;transition:.15s}
+  .nbtn:active,.nbtn.active{box-shadow:inset 4px 4px 8px var(--dk),inset -4px -4px 8px var(--lt)}
+  .tab{padding:.55rem 1.1rem;border-radius:.7rem;font-weight:600;transition:.15s}
+  .tab.active{box-shadow:inset 3px 3px 6px var(--dk),inset -3px -3px 6px var(--lt);color:var(--acc)}
+  .round{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--bg);box-shadow:5px 5px 10px var(--dk),-5px -5px 10px var(--lt)}
+  .round:hover{color:var(--acc)}
+  input,textarea,select{background:transparent;border:0;outline:0;width:100%;padding:.8rem 1rem;color:var(--ink)}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+  .switch{width:58px;height:30px;border-radius:999px;position:relative;cursor:pointer;box-shadow:inset 3px 3px 6px var(--dk),inset -3px -3px 6px var(--lt)}
+  .switch::after{content:"";position:absolute;top:3px;left:4px;width:24px;height:24px;border-radius:50%;background:var(--bg);box-shadow:3px 3px 6px var(--dk),-2px -2px 5px var(--lt);transition:.2s}
+  .switch.on{background:rgba(47,107,85,.18)}.switch.on::after{left:30px;background:var(--acc);box-shadow:2px 2px 5px var(--dk)}
+</style>
+</head>
+<body>
+<header class="px-4 pt-4 sticky top-0 z-50" style="background:linear-gradient(var(--bg) 70%,transparent)">
+  <nav class="raised max-w-6xl mx-auto px-5 py-3 flex items-center justify-between">
+    <a href="#inicio" class="serif font-bold text-xl flex items-center gap-2"><i class="bi bi-tree" style="color:var(--acc)"></i>Sereno</a>
+    <div class="hidden md:flex gap-2">
+      <a data-link class="tab" href="#inicio">Inicio</a><a data-link class="tab" href="#colecciones">Colecciones</a><a data-link class="tab" href="#salas">Salas</a><a data-link class="tab" href="#contacto">Contacto</a>
+    </div>
+    <button id="menuBtn" class="round md:hidden" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu"><i class="bi bi-list text-xl"></i></button>
+  </nav>
+  <div id="mobileMenu" class="hidden md:hidden raised max-w-6xl mx-auto mt-3 p-4 flex flex-col gap-2">
+    <a data-link class="tab" href="#inicio">Inicio</a><a data-link class="tab" href="#colecciones">Colecciones</a><a data-link class="tab" href="#salas">Salas</a><a data-link class="tab" href="#contacto">Contacto</a>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 py-10">
+  <!-- INICIO -->
+  <div data-page="inicio">
+    <section class="raised overflow-hidden mb-10">
+      <div class="row g-0 items-stretch">
+        <div class="col-lg-6 p-8 md:p-12">
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Un refugio verde para la lectura.</h1>
+          <p class="mb-6 max-w-md">Estanterías de madera, plantas y silencio. Pregunta por un libro, reserva una sala o simplemente siéntate a leer.</p>
+          <div class="inset flex items-center mb-5 max-w-md"><i class="bi bi-search pl-4"></i><input placeholder="¿Qué te apetece leer?" aria-label="Buscar"></div>
+          <a href="#colecciones" class="nbtn">Ver colecciones</a>
+        </div>
+        <div class="col-lg-6" style="min-height:300px;background:linear-gradient(rgba(47,107,85,.25),rgba(47,107,85,.25)),url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=1200&q=70') center/cover,#9fb8a8"></div>
+      </div>
+    </section>
+    <div class="row g-4">
+      <div class="col-md-4"><div class="raised p-6 h-100"><h2 class="text-xl font-bold">Préstamo semanal</h2><p class="text-sm mb-0">Llévate hasta cinco libros y devuélvelos cuando termines.</p></div></div>
+      <div class="col-md-4"><div class="raised p-6 h-100"><h2 class="text-xl font-bold">Lectura en jardín</h2><p class="text-sm mb-0">Patio interior con bancos y sombra, abierto de abril a octubre.</p></div></div>
+      <div class="col-md-4"><div class="raised p-6 h-100"><h2 class="text-xl font-bold">Voluntariado</h2><p class="text-sm mb-0">Acompaña a otros lectores y ayuda a organizar la colección.</p></div></div>
+    </div>
+  </div>
+
+  <!-- COLECCIONES -->
+  <div data-page="colecciones" hidden>
+    <h1 class="text-4xl font-bold mb-2">Colecciones</h1><p class="mb-8">Seis fondos principales, catalogados por tema.</p>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4"><div class="raised p-5"><i class="bi bi-feather text-2xl" style="color:var(--acc)"></i><h2 class="text-xl font-bold mt-2">Literatura</h2><p class="text-sm mb-0">Narrativa, teatro y poesía clásica y contemporánea. 12.400 volúmenes.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="raised p-5"><i class="bi bi-globe-americas text-2xl" style="color:var(--acc)"></i><h2 class="text-xl font-bold mt-2">Historia y geografía</h2><p class="text-sm mb-0">Atlas, crónicas y guías de viaje. 6.800 volúmenes.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="raised p-5"><i class="bi bi-flower2 text-2xl" style="color:var(--acc)"></i><h2 class="text-xl font-bold mt-2">Naturaleza</h2><p class="text-sm mb-0">Botánica, ornitología y jardinería. 3.900 volúmenes.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="raised p-5"><i class="bi bi-palette text-2xl" style="color:var(--acc)"></i><h2 class="text-xl font-bold mt-2">Arte</h2><p class="text-sm mb-0">Pintura, fotografía y arquitectura. 4.200 volúmenes.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="raised p-5"><i class="bi bi-balloon-heart text-2xl" style="color:var(--acc)"></i><h2 class="text-xl font-bold mt-2">Infantil y juvenil</h2><p class="text-sm mb-0">Álbumes ilustrados y primeras lecturas. 7.100 volúmenes.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="raised p-5"><i class="bi bi-cpu text-2xl" style="color:var(--acc)"></i><h2 class="text-xl font-bold mt-2">Ciencia y tecnología</h2><p class="text-sm mb-0">Divulgación y manuales prácticos. 5.600 volúmenes.</p></div></div>
+    </div>
+  </div>
+
+  <!-- SALAS -->
+  <div data-page="salas" hidden>
+    <h1 class="text-4xl font-bold mb-2">Salas</h1><p class="mb-8">Activa el interruptor para marcar la sala que quieres reservar.</p>
+    <div class="row g-4 max-w-4xl">
+      <div class="col-md-6"><div class="raised p-5 flex items-center justify-between gap-3"><div><h2 class="text-lg font-bold m-0">Sala del roble</h2><p class="text-sm m-0">8 puestos · silencio</p></div><div class="switch" role="switch" aria-checked="false" tabindex="0" aria-label="Reservar Sala del roble"></div></div></div>
+      <div class="col-md-6"><div class="raised p-5 flex items-center justify-between gap-3"><div><h2 class="text-lg font-bold m-0">Sala del helecho</h2><p class="text-sm m-0">4 puestos · trabajo en grupo</p></div><div class="switch on" role="switch" aria-checked="true" tabindex="0" aria-label="Reservar Sala del helecho"></div></div></div>
+      <div class="col-md-6"><div class="raised p-5 flex items-center justify-between gap-3"><div><h2 class="text-lg font-bold m-0">Cabina de lectura</h2><p class="text-sm m-0">1 puesto · luz natural</p></div><div class="switch" role="switch" aria-checked="false" tabindex="0" aria-label="Reservar Cabina de lectura"></div></div></div>
+      <div class="col-md-6"><div class="raised p-5 flex items-center justify-between gap-3"><div><h2 class="text-lg font-bold m-0">Aula de talleres</h2><p class="text-sm m-0">20 puestos · proyector</p></div><div class="switch" role="switch" aria-checked="false" tabindex="0" aria-label="Reservar Aula de talleres"></div></div></div>
+    </div>
+  </div>
+
+  <!-- CONTACTO -->
+  <div data-page="contacto" hidden>
+    <h1 class="text-4xl font-bold mb-8">Contacto</h1>
+    <div class="row g-4">
+      <div class="col-lg-7"><form class="raised p-6 space-y-4" onsubmit="event.preventDefault();this.querySelector('button').textContent='Enviado, gracias'">
+        <div class="inset"><input placeholder="Nombre" aria-label="Nombre" required></div><div class="inset"><input type="email" placeholder="Correo" aria-label="Correo" required></div><div class="inset"><textarea rows="4" placeholder="Mensaje" aria-label="Mensaje"></textarea></div><button class="nbtn">Enviar</button></form></div>
+      <div class="col-lg-5"><div class="raised p-6 text-sm space-y-3"><p class="m-0"><i class="bi bi-geo-alt mr-2"></i>Calle del Olivo 8</p><p class="m-0"><i class="bi bi-telephone mr-2"></i>+00 987 654 321</p><p class="m-0"><i class="bi bi-envelope mr-2"></i>info@bibliotecasereno.org</p>
+        <div class="flex gap-3 pt-2"><a class="round" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a class="round" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a class="round" href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a class="round" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a></div></div></div>
+    </div>
+  </div>
+</main>
+<footer class="text-center text-sm pb-10">© 2026 Biblioteca Sereno</footer>
+
+<script>
+const b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
+function toggle(o){m.classList.toggle('hidden',!o);b.setAttribute('aria-expanded',String(o));b.querySelector('i').className=o?'bi bi-x-lg text-xl':'bi bi-list text-xl'}
+b.addEventListener('click',()=>toggle(m.classList.contains('hidden')));
+const pages=[...document.querySelectorAll('[data-page]')];
+function route(){const h=(location.hash||'#inicio').slice(1);const t=pages.some(p=>p.dataset.page===h)?h:'inicio';
+ pages.forEach(p=>p.hidden=p.dataset.page!==t);
+ document.querySelectorAll('[data-link]').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+t));
+ toggle(false);window.scrollTo(0,0)}
+addEventListener('hashchange',route);route();
+document.querySelectorAll('.switch').forEach(s=>{const f=()=>{const on=s.classList.toggle('on');s.setAttribute('aria-checked',String(on))};s.addEventListener('click',f);s.addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();f()}})});
+</script>
+</body>
+</html>

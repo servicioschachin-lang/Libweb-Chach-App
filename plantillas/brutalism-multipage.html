@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archivo Abierto · Brutalismo</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  [hidden]{display:none!important}
+  :root{--bg:#efeee4;--k:#111;--r:#ff2e2e;--g:#00c26e;--bl:#2646ff}
+  body{font-family:'Courier Prime',monospace;background:var(--bg);color:var(--k);line-height:1.6;font-weight:700;background-image:linear-gradient(#0000000f 1px,transparent 1px),linear-gradient(90deg,#0000000f 1px,transparent 1px);background-size:32px 32px}
+  h1,h2,h3,.an{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:1}
+  .slab{border:3px solid var(--k);background:#fff}
+  .nav a{display:block;padding:.6rem 1rem;border:3px solid var(--k);background:#fff;font-family:'Anton';text-transform:uppercase;font-size:1.1rem}
+  .nav a:hover{background:var(--g)}.nav a.active{background:var(--k);color:#fff}
+  .bbtn{display:inline-block;border:3px solid var(--k);background:var(--r);color:#fff;padding:.7rem 1.4rem;font-family:'Anton';text-transform:uppercase;letter-spacing:.04em;box-shadow:5px 5px 0 var(--k);transition:.1s}
+  .bbtn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--k)}
+  .soc{width:48px;height:48px;border:3px solid var(--k);background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:1.2rem}
+  .soc:hover{background:var(--bl);color:#fff}
+  input,textarea,select{border:3px solid var(--k);background:#fff;padding:.7rem 1rem;width:100%;font-weight:700}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:4px solid var(--bl);outline-offset:3px}
+  table{border-collapse:collapse;width:100%}th,td{border:3px solid var(--k);padding:.6rem .8rem;text-align:left}th{background:var(--k);color:#fff;font-family:'Anton';font-weight:400;text-transform:uppercase}
+  .stamp{display:inline-block;border:3px solid var(--r);color:var(--r);padding:.1rem .6rem;transform:rotate(-4deg);font-family:'Anton';text-transform:uppercase}
+</style>
+</head>
+<body>
+<header class="border-b-[6px] border-black bg-white sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="#inicio" class="an text-3xl leading-none">Archivo<span class="text-red-600">/</span>Abierto</a>
+    <nav class="nav hidden md:flex gap-2"><a data-link href="#inicio">Inicio</a><a data-link href="#catalogo">Catálogo</a><a data-link href="#servicios">Servicios</a><a data-link href="#contacto">Contacto</a></nav>
+    <button id="menuBtn" class="md:hidden border-[3px] border-black bg-red-500 text-white w-12 h-12 text-2xl flex items-center justify-center" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu"><i class="bi bi-list"></i></button>
+  </div>
+  <nav id="mobileMenu" class="nav hidden md:hidden border-t-[3px] border-black p-3 flex flex-col gap-2 bg-white"><a data-link href="#inicio">Inicio</a><a data-link href="#catalogo">Catálogo</a><a data-link href="#servicios">Servicios</a><a data-link href="#contacto">Contacto</a></nav>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 py-10">
+  <!-- INICIO -->
+  <div data-page="inicio">
+    <section class="row g-0 border-[3px] border-black bg-white mb-10" style="box-shadow:10px 10px 0 #111">
+      <div class="col-lg-7 p-6 md:p-10 border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black">
+        <span class="stamp mb-4">Acceso libre</span>
+        <h1 class="text-6xl md:text-8xl mb-5">Todo el archivo, sin puertas.</h1>
+        <p class="text-lg max-w-lg mb-6">Documentos, periódicos, mapas y libros raros. Consulta en sala o descarga lo que ya está digitalizado.</p>
+        <a href="#catalogo" class="bbtn">Entrar al catálogo</a>
+      </div>
+      <div class="col-lg-5" style="min-height:300px;background:linear-gradient(var(--bl),var(--bl));position:relative">
+        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=70" class="absolute inset-0 w-full h-full object-cover" style="filter:grayscale(1) contrast(1.4);mix-blend-mode:multiply" alt="Pila de libros antiguos" onerror="this.style.display='none'">
+      </div>
+    </section>
+    <div class="row g-4">
+      <div class="col-md-4"><div class="slab p-5 h-100" style="box-shadow:6px 6px 0 var(--g)"><h2 class="text-3xl mb-2">Hemeroteca</h2><p class="mb-0">Prensa local desde 1890, consultable por fecha y titular.</p></div></div>
+      <div class="col-md-4"><div class="slab p-5 h-100" style="box-shadow:6px 6px 0 var(--r)"><h2 class="text-3xl mb-2">Mapoteca</h2><p class="mb-0">Planos de la ciudad, cartas náuticas y atlas escaneados.</p></div></div>
+      <div class="col-md-4"><div class="slab p-5 h-100" style="box-shadow:6px 6px 0 var(--bl)"><h2 class="text-3xl mb-2">Fondo raro</h2><p class="mb-0">Ediciones antiguas con cita previa y guantes incluidos.</p></div></div>
+    </div>
+  </div>
+
+  <!-- CATÁLOGO -->
+  <div data-page="catalogo" hidden>
+    <h1 class="text-6xl md:text-7xl mb-6">Catálogo</h1>
+    <div class="slab p-3 mb-6 flex gap-3 items-center"><i class="bi bi-search text-xl"></i><input id="q" placeholder="Busca por título, tipo o año" aria-label="Buscar en el catálogo" style="border:0;padding:.3rem"></div>
+    <div class="overflow-x-auto"><table id="tbl">
+      <thead><tr><th>Título</th><th>Tipo</th><th>Año</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td>Diario del puerto</td><td>Periódico</td><td>1921</td><td><span class="text-green-700">Disponible</span></td></tr>
+        <tr><td>Plano de la ciudad vieja</td><td>Mapa</td><td>1887</td><td><span class="text-green-700">Disponible</span></td></tr>
+        <tr><td>Cartas de un emigrante</td><td>Manuscrito</td><td>1902</td><td><span class="text-red-600">Solo en sala</span></td></tr>
+        <tr><td>Atlas de las rutas del sur</td><td>Atlas</td><td>1955</td><td><span class="text-green-700">Disponible</span></td></tr>
+        <tr><td>Boletín municipal nº 12</td><td>Periódico</td><td>1968</td><td><span class="text-green-700">Disponible</span></td></tr>
+        <tr><td>Primera edición de Fuegos lentos</td><td>Libro raro</td><td>1934</td><td><span class="text-red-600">Cita previa</span></td></tr>
+      </tbody></table></div>
+    <p id="none" class="mt-4 text-lg" hidden>Sin resultados. Prueba con «mapa» o «1921».</p>
+  </div>
+
+  <!-- SERVICIOS -->
+  <div data-page="servicios" hidden>
+    <h1 class="text-6xl md:text-7xl mb-6">Servicios</h1>
+    <div class="row g-4">
+      <div class="col-md-6"><div class="slab p-5" style="box-shadow:6px 6px 0 #111"><h2 class="text-3xl mb-2">Consulta en sala</h2><p class="mb-0">Mesas con luz, lupas y fotografía sin flash permitida.</p></div></div>
+      <div class="col-md-6"><div class="slab p-5" style="box-shadow:6px 6px 0 #111"><h2 class="text-3xl mb-2">Digitalización a demanda</h2><p class="mb-0">Pide que escaneemos un documento y lo recibes en 10 días.</p></div></div>
+      <div class="col-md-6"><div class="slab p-5" style="box-shadow:6px 6px 0 #111"><h2 class="text-3xl mb-2">Visitas guiadas</h2><p class="mb-0">Recorridos por los depósitos para grupos de hasta 12 personas.</p></div></div>
+      <div class="col-md-6"><div class="slab p-5" style="box-shadow:6px 6px 0 #111"><h2 class="text-3xl mb-2">Ayuda de investigación</h2><p class="mb-0">Archiveros que te orientan en búsquedas históricas o genealógicas.</p></div></div>
+    </div>
+  </div>
+
+  <!-- CONTACTO -->
+  <div data-page="contacto" hidden>
+    <h1 class="text-6xl md:text-7xl mb-6">Contacto</h1>
+    <div class="row g-4">
+      <div class="col-lg-7"><form class="slab p-5 space-y-4" style="box-shadow:8px 8px 0 #111" onsubmit="event.preventDefault();this.querySelector('button').textContent='Recibido'"><input placeholder="Nombre" aria-label="Nombre" required><input type="email" placeholder="Correo" aria-label="Correo" required><textarea rows="4" placeholder="¿Qué documento buscas?" aria-label="Mensaje"></textarea><button class="bbtn">Enviar</button></form></div>
+      <div class="col-lg-5"><div class="slab p-5 space-y-3" style="background:var(--g)"><p class="m-0"><i class="bi bi-geo-alt-fill mr-2"></i>Calle del Depósito 4</p><p class="m-0"><i class="bi bi-telephone-fill mr-2"></i>+00 444 222 111</p><p class="m-0"><i class="bi bi-envelope-fill mr-2"></i>consultas@archivoabierto.org</p><div class="flex gap-3 pt-2"><a class="soc" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a class="soc" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a class="soc" href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a class="soc" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a></div></div></div>
+    </div>
+  </div>
+</main>
+<footer class="border-t-[6px] border-black bg-white py-5 text-center">© 2026 Archivo Abierto · Lun–Vie 9:00–17:00</footer>
+
+<script>
+const b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
+function toggle(o){m.classList.toggle('hidden',!o);b.setAttribute('aria-expanded',String(o));b.querySelector('i').className=o?'bi bi-x-lg':'bi bi-list'}
+b.addEventListener('click',()=>toggle(m.classList.contains('hidden')));
+const pages=[...document.querySelectorAll('[data-page]')];
+function route(){const h=(location.hash||'#inicio').slice(1);const t=pages.some(p=>p.dataset.page===h)?h:'inicio';
+ pages.forEach(p=>p.hidden=p.dataset.page!==t);
+ document.querySelectorAll('[data-link]').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+t));
+ toggle(false);window.scrollTo(0,0)}
+addEventListener('hashchange',route);route();
+document.getElementById('q').addEventListener('input',e=>{const v=e.target.value.toLowerCase().trim();let n=0;
+ document.querySelectorAll('#tbl tbody tr').forEach(r=>{const ok=!v||r.textContent.toLowerCase().includes(v);r.hidden=!ok;if(ok)n++});
+ document.getElementById('none').hidden=n>0});
+</script>
+</body>
+</html>

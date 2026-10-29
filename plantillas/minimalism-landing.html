@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biblioteca Hojarasca · Minimalismo</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{--ink:#1c1c1c;--mute:#6b6b66;--line:#e4e4df;--olive:#4d6b3a}
+  body{font-family:'Newsreader',serif;background:#fff;color:var(--ink);line-height:1.8;font-size:1.125rem;font-weight:300}
+  h1,h2,h3{font-weight:300;line-height:1.1;letter-spacing:-.015em}
+  .link{border-bottom:1px solid var(--ink);padding-bottom:2px;transition:.2s}.link:hover{color:var(--olive);border-color:var(--olive)}
+  .mbtn{display:inline-block;background:var(--ink);color:#fff;padding:.85rem 2rem;font-weight:400;transition:.2s}.mbtn:hover{background:var(--olive)}
+  .soc{display:inline-flex;width:40px;height:40px;align-items:center;justify-content:center;border:1px solid var(--line);color:var(--ink);transition:.2s}.soc:hover{border-color:var(--olive);color:var(--olive)}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--olive);outline-offset:4px}
+  .rule{border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<header class="relative z-40 bg-white">
+  <nav class="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
+    <a href="#top" class="text-2xl font-normal">Hojarasca</a>
+    <ul class="hidden md:flex gap-10 list-none m-0 p-0 text-base"><li><a href="#sobre" class="link border-transparent">Sobre nosotros</a></li><li><a href="#fondo" class="link border-transparent">Fondo</a></li><li><a href="#visita" class="link border-transparent">Visita</a></li></ul>
+    <button id="menuBtn" class="md:hidden text-2xl" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu"><i class="bi bi-list"></i></button>
+  </nav>
+  <div id="mobileMenu" class="hidden md:hidden rule bg-white"><ul class="list-none m-0 px-6 py-4 text-2xl"><li class="py-2"><a href="#sobre">Sobre nosotros</a></li><li class="py-2"><a href="#fondo">Fondo</a></li><li class="py-2"><a href="#visita">Visita</a></li></ul></div>
+</header>
+
+<main id="top">
+  <section class="max-w-5xl mx-auto px-6 pt-16 md:pt-28 pb-12">
+    <h1 class="text-5xl md:text-8xl max-w-3xl mb-8">Un lugar para leer en silencio.</h1>
+    <p class="max-w-lg mb-8 text-[var(--mute)]">Hojarasca es una biblioteca pequeña con una colección elegida con cuidado y mesas de madera junto a la ventana.</p>
+    <a href="#visita" class="mbtn">Planifica tu visita</a>
+  </section>
+  <section class="max-w-6xl mx-auto px-6 pb-24">
+    <div class="w-full overflow-hidden" style="aspect-ratio:21/9;background:#eeeee9"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1800&q=70" class="w-full h-full object-cover" alt="Libros sobre una mesa de lectura" onerror="this.style.display='none'"></div>
+  </section>
+
+  <section id="sobre" class="rule">
+    <div class="max-w-5xl mx-auto px-6 py-24 row g-5">
+      <div class="col-md-4"><h2 class="text-4xl">Sobre nosotros</h2></div>
+      <div class="col-md-8"><p>Abrimos en 1974 en una antigua casa de maestros. Desde entonces mantenemos una idea simple: pocos libros, bien elegidos, al alcance de todos.</p><p class="mb-0 text-[var(--mute)]">No hay pantallas en la sala de lectura. Hay luz natural, sillas cómodas y un bibliotecario dispuesto a recomendarte algo.</p></div>
+    </div>
+  </section>
+
+  <section id="fondo" class="rule">
+    <div class="max-w-5xl mx-auto px-6 py-24">
+      <h2 class="text-4xl mb-12">El fondo</h2>
+      <div class="row g-5">
+        <div class="col-md-4"><h3 class="text-2xl mb-2">Narrativa</h3><p class="text-[var(--mute)] mb-0">Autores clásicos y contemporáneos, en su idioma original y en traducción.</p></div>
+        <div class="col-md-4"><h3 class="text-2xl mb-2">Ensayo</h3><p class="text-[var(--mute)] mb-0">Filosofía, historia y pensamiento, con ediciones anotadas.</p></div>
+        <div class="col-md-4"><h3 class="text-2xl mb-2">Poesía</h3><p class="text-[var(--mute)] mb-0">Una estantería dedicada solo a poemarios, de ayer y de hoy.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visita" class="rule">
+    <div class="max-w-5xl mx-auto px-6 py-24 row g-5">
+      <div class="col-md-4"><h2 class="text-4xl">Visita</h2></div>
+      <div class="col-md-8">
+        <dl class="m-0"><div class="flex justify-between py-3 rule"><dt class="font-normal">Martes a sábado</dt><dd class="m-0">10:00 – 18:00</dd></div><div class="flex justify-between py-3 rule"><dt class="font-normal">Domingo</dt><dd class="m-0">11:00 – 14:00</dd></div><div class="flex justify-between py-3 rule"><dt class="font-normal">Lunes</dt><dd class="m-0">Cerrado</dd></div></dl>
+        <p class="mt-8 mb-6 text-[var(--mute)]">Calle del Olmo 15. La entrada es gratuita.</p>
+        <form class="flex flex-col sm:flex-row gap-3 max-w-md" onsubmit="event.preventDefault();this.querySelector('button').textContent='Gracias'"><input type="email" placeholder="Tu correo" aria-label="Correo" class="flex-1 min-w-0 border-b border-black py-2 bg-transparent"><button class="mbtn !py-2">Suscribirme</button></form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rule">
+  <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-5 text-base text-[var(--mute)]">
+    <p class="m-0">© 2026 Biblioteca Hojarasca</p>
+    <div class="flex gap-2"><a class="soc" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a class="soc" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a class="soc" href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a class="soc" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a></div>
+  </div>
+</footer>
+<script>
+const b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
+function toggle(o){m.classList.toggle('hidden',!o);b.setAttribute('aria-expanded',String(o));b.querySelector('i').className=o?'bi bi-x-lg':'bi bi-list'}
+b.addEventListener('click',()=>toggle(m.classList.contains('hidden')));
+m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggle(false)));
+</script>
+</body>
+</html>

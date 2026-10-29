@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biblioteca Pública Nº1 · Brutalismo</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Archivo+Black&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{--y:#ffe500;--k:#000;--p:#ff4fa3;--b:#3a5bff;--w:#fff}
+  body{font-family:'Archivo',sans-serif;background:var(--y);color:var(--k);line-height:1.55;font-weight:600}
+  h1,h2,h3,.blk{font-family:'Archivo Black',sans-serif;line-height:.95;text-transform:uppercase}
+  .box{border:4px solid var(--k);background:var(--w);box-shadow:8px 8px 0 var(--k)}
+  .bbtn{display:inline-block;border:4px solid var(--k);background:var(--p);color:var(--k);padding:.8rem 1.5rem;font-family:'Archivo Black';text-transform:uppercase;box-shadow:6px 6px 0 var(--k);transition:transform .1s,box-shadow .1s}
+  .bbtn:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--k)}
+  .bbtn:active{transform:translate(6px,6px);box-shadow:0 0 0 var(--k)}
+  .soc{width:52px;height:52px;border:4px solid var(--k);background:var(--w);display:inline-flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:4px 4px 0 var(--k)}
+  .soc:hover{background:var(--p)}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:4px solid var(--b);outline-offset:3px}
+  .marq{border-block:4px solid var(--k);background:var(--k);color:var(--y);overflow:hidden;white-space:nowrap}
+  .marq div{display:inline-block;padding:.6rem 0;animation:m 22s linear infinite;font-family:'Archivo Black';text-transform:uppercase}
+  @keyframes m{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.marq div{animation:none}}
+</style>
+</head>
+<body>
+<header class="border-b-4 border-black bg-white sticky top-0 z-50">
+  <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="#top" class="blk text-xl bg-black text-yellow-300 px-3 py-1">Biblio Nº1</a>
+    <ul class="hidden md:flex gap-6 list-none m-0 p-0 blk text-sm"><li><a href="#que" class="hover:underline">Qué hay</a></li><li><a href="#libros" class="hover:underline">Libros</a></li><li><a href="#reglas" class="hover:underline">Reglas</a></li><li><a href="#entra" class="hover:underline">Entra</a></li></ul>
+    <button id="menuBtn" class="md:hidden border-4 border-black bg-pink-400 w-12 h-12 text-2xl flex items-center justify-center" style="box-shadow:4px 4px 0 #000" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu"><i class="bi bi-list"></i></button>
+  </nav>
+  <div id="mobileMenu" class="hidden md:hidden border-t-4 border-black bg-pink-400">
+    <ul class="list-none p-0 m-0 blk text-2xl"><li><a class="block px-4 py-4 border-b-4 border-black" href="#que">Qué hay</a></li><li><a class="block px-4 py-4 border-b-4 border-black" href="#libros">Libros</a></li><li><a class="block px-4 py-4 border-b-4 border-black" href="#reglas">Reglas</a></li><li><a class="block px-4 py-4" href="#entra">Entra</a></li></ul>
+  </div>
+</header>
+
+<main id="top">
+  <section class="px-4 py-12 md:py-20">
+    <div class="max-w-6xl mx-auto row g-5 items-center">
+      <div class="col-lg-7">
+        <h1 class="text-5xl md:text-8xl mb-6">Lee fuerte.<br>Presta más.<br>Vuelve mañana.</h1>
+        <p class="text-xl max-w-xl mb-6 bg-white border-4 border-black p-3 inline-block">Biblioteca pública, gratis y sin letra pequeña. Abierta todos los días menos domingo.</p>
+        <div class="flex flex-wrap gap-4"><a href="#libros" class="bbtn">Ver libros</a><a href="#entra" class="bbtn" style="background:var(--b);color:#fff">Sacar carnet</a></div>
+      </div>
+      <div class="col-lg-5">
+        <div class="box p-0 overflow-hidden" style="transform:rotate(2deg)">
+          <div style="aspect-ratio:4/5;background:linear-gradient(135deg,var(--b),var(--p))"><img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=70" class="w-full h-full object-cover" style="filter:grayscale(1) contrast(1.3)" alt="Sala de la biblioteca con estanterías" onerror="this.style.display='none'"></div>
+          <div class="border-t-4 border-black bg-black text-yellow-300 blk p-2 text-sm">Sala principal · Planta 1</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marq"><div>Libros gratis ★ Wifi gratis ★ Silencio opcional ★ Café barato ★ Libros gratis ★ Wifi gratis ★ Silencio opcional ★ Café barato ★ Libros gratis ★ Wifi gratis ★ Silencio opcional ★ Café barato ★</div></div>
+
+  <section id="que" class="px-4 py-16">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-6xl mb-10">Qué hay dentro</h2>
+      <div class="row g-4">
+        <div class="col-md-4"><div class="box p-5 h-100" style="background:var(--p)"><i class="bi bi-book-fill text-4xl"></i><h3 class="text-2xl mt-3 mb-2">60.000 libros</h3><p class="mb-0">Novela, cómic, ensayo, técnica y más. Todo en estantería abierta.</p></div></div>
+        <div class="col-md-4"><div class="box p-5 h-100" style="background:var(--b);color:#fff"><i class="bi bi-pc-display text-4xl"></i><h3 class="text-2xl mt-3 mb-2">20 ordenadores</h3><p class="mb-0">Uso libre una hora al día. Impresión a precio de coste.</p></div></div>
+        <div class="col-md-4"><div class="box p-5 h-100"><i class="bi bi-people-fill text-4xl"></i><h3 class="text-2xl mt-3 mb-2">Clubes</h3><p class="mb-0">Lectura, ajedrez, escritura y mucho debate cada semana.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="libros" class="px-4 py-16 bg-black">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-6xl mb-10 text-yellow-300">Los más pedidos</h2>
+      <div class="row g-4">
+        <div class="col-6 col-lg-3"><div class="box p-3 h-100" style="background:var(--y)"><div class="blk text-2xl border-4 border-black p-3 bg-white" style="height:160px">Ruido de fondo</div><p class="mt-3 mb-0">Novela · E. Marín</p></div></div>
+        <div class="col-6 col-lg-3"><div class="box p-3 h-100" style="background:var(--p)"><div class="blk text-2xl border-4 border-black p-3 bg-white" style="height:160px">Hormigón y flores</div><p class="mt-3 mb-0">Ensayo · G. Rey</p></div></div>
+        <div class="col-6 col-lg-3"><div class="box p-3 h-100" style="background:var(--b);color:#fff"><div class="blk text-2xl border-4 border-black p-3 bg-white text-black" style="height:160px">Código abierto</div><p class="mt-3 mb-0">Técnica · H. Paz</p></div></div>
+        <div class="col-6 col-lg-3"><div class="box p-3 h-100" style="background:#fff"><div class="blk text-2xl border-4 border-black p-3 bg-yellow-300" style="height:160px">Ciudad de papel</div><p class="mt-3 mb-0">Cómic · A. Toro</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reglas" class="px-4 py-16">
+    <div class="max-w-4xl mx-auto box p-6 md:p-10">
+      <h2 class="text-4xl md:text-5xl mb-6">Tres reglas</h2>
+      <ol class="m-0 pl-5 text-xl space-y-3"><li>Devuelve los libros en 21 días o renueva.</li><li>Habla bajo en las salas de estudio.</li><li>Si algo te gusta, cuéntaselo a alguien.</li></ol>
+    </div>
+  </section>
+
+  <section id="entra" class="px-4 py-16">
+    <div class="max-w-3xl mx-auto box p-6 md:p-10" style="background:var(--p)">
+      <h2 class="text-4xl md:text-5xl mb-4">Entra ya</h2>
+      <p class="text-lg">Escribe tu correo y te mandamos el carnet digital.</p>
+      <div class="flex flex-col sm:flex-row gap-4"><input type="email" aria-label="Correo electrónico" placeholder="TU@CORREO.COM" class="flex-1 min-w-0 border-4 border-black px-4 py-3 bg-white font-bold"><button class="bbtn" style="background:var(--y)">Enviar</button></div>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t-4 border-black bg-white px-4 py-8">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
+    <p class="m-0 blk text-sm">© 2026 Biblioteca Pública Nº1 · Calle Ancha 100</p>
+    <div class="flex gap-4"><a class="soc" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a class="soc" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a class="soc" href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a class="soc" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a></div>
+  </div>
+</footer>
+<script>
+const b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
+function toggle(o){m.classList.toggle('hidden',!o);b.setAttribute('aria-expanded',String(o));b.querySelector('i').className=o?'bi bi-x-lg':'bi bi-list'}
+b.addEventListener('click',()=>toggle(m.classList.contains('hidden')));
+m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggle(false)));
+</script>
+</body>
+</html>
